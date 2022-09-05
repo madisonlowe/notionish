@@ -1,0 +1,16 @@
+.EditableBlock {
+  background-color: transparent;
+  border: 0px;
+  outline: none;
+  padding: 0.5rem;
+  resize: none;
+  overflow: hidden;
+  min-height: 14px;
+  max-height: 100vh;
+  width: 50vw;
+}
+
+.EditableBlock:hover {
+  background-color: #d3d3d3;
+  cursor: hover;
+}
