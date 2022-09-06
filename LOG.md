@@ -37,11 +37,11 @@
   - Returns one editable block as default.
   - When you press enter inside of an editable block, it duplicates the block (but empty) on the next line.
 - **Editable header zone:**
-  - Static icon field.
+  - Static icon field. DONE.
     - Editable icon field.
-  - Static title field.
-    - Editable title field.
-  - Static cover field.
+  - Static title field. DONE.
+    - Editable title field. DONE (VERSION 1, SEE NOTES).
+  - Static cover field. DONE.
     - Editable cover field.
 - **Editable block:**
   - The Notion editable block features:
@@ -65,3 +65,53 @@
   - Maybe also because when there's no source provided for an image, a visual error displays, but that doesn't happen with spans?
 - The cover, however, is just an image. To change that, you need to go through a few more sub-menus and select new options and perform an upload.
 - Setting the font-size on the span for the header icon is how you change the size of the emoji, as it's read as a font (I think)!
+- Similar to above weird choices (or choices I don't understand yet), the header text on Notion is just a div with a set placeholder. Using an input is going kind of weird, so will try that!
+- Figured out the input and types, but now nothing shows when the page compiles, which is so fun.
+- Figured out why it wasn't showing: had something between the input tags, like a fool.
+- On Notion, when you type a title for a page that exceeds the size of the input field, it stretches and continues onto a new line. Will attempt to implement that now! Think the input would need to be a textarea to be multiline? Will Google.
+  - I was correct. Will make a textarea.
+- Got it working properly, but the CSS is kind of nightmarish and I can't be bothered figuring it out right now, would rather make some more functional things. So! Going to save the code I had in a code block here for it, and then just put a limit on how many characters can be entered into an input.
+
+```typescript
+export default function EditableHeader() {
+  const [headerText, setHeaderText] = useState("Untitled");
+
+  function onChange(e: React.ChangeEvent) {
+    setHeaderText((e.target as HTMLTextAreaElement).value);
+  }
+
+  function onInput(e: React.ChangeEvent<HTMLTextAreaElement>) {
+    if (e.target.scrollHeight > 33) {
+      e.target.style.height = "5px";
+      e.target.style.height = e.target.scrollHeight - 16 + "px";
+    }
+  }
+
+  function onKeyDown(e: React.KeyboardEvent<HTMLTextAreaElement>) {
+    if (e.key === "Enter" || e.key === "Escape") {
+      (e.target as HTMLTextAreaElement).blur();
+    }
+  }
+
+  return (
+    <div className="EditableHeader">
+      <img
+        alt="Decorative header background."
+        src="https://www.nasa.gov/sites/default/files/styles/full_width/public/thumbnails/image/main_image_star-forming_region_carina_nircam_final-1280.jpg"
+        className="headerImage"
+      />
+      <span className="headerIcon">⭐️</span>
+      <textarea
+        value={headerText}
+        onChange={onChange}
+        onInput={onInput}
+        onKeyDown={onKeyDown}
+        rows={1}
+        className="headerTitle"
+      ></textarea>
+    </div>
+  );
+}
+```
+
+- Set maxLength to 11, which is a bit short, but read somewhere that the widest letter is capitalised W, and 11 capitalised Ws fit, so it is what it is.
