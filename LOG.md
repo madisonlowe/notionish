@@ -55,3 +55,13 @@
   - `<img>` block.
 
 ### Coding Log
+
+- Started building the editable header component on a new branch.
+- Started making the static version first. Was wondering how Notion dealt with the images for the selectable icons, turns out they're listed as spans in the code? Inside of two divs? One of those divs has a button role? With font family styling for emojis applied to them, and then the emoji itself changes between the span tags?
+  - Not sure why, but I'm sure I'll find out.
+  - Maybe so that the image can be selected and altered?
+  - Potentially the CSS is easier if it's being treated as a more text-like element than an image element? Maybe not though?
+  - Maybe because the icon in the tab becomes the same emoji as whatever you select for the page icon, and it's easier to convert to that one line of SVG emoji code if it's formatted as a span? You can just copy it over to wherever it needs to be inside the metadata?
+  - Maybe also because when there's no source provided for an image, a visual error displays, but that doesn't happen with spans?
+- The cover, however, is just an image. To change that, you need to go through a few more sub-menus and select new options and perform an upload.
+- Setting the font-size on the span for the header icon is how you change the size of the emoji, as it's read as a font (I think)!
