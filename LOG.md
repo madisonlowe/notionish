@@ -139,3 +139,5 @@ Thu 8th Sept
 - Still need to:
   - Use the state for the current icon to update the page metadata, so the favicon is the icon.
   - Make the CSS for updating the icon apply properly.
+    - CSS wasn't working because I'd forgotten to import it again, unreal.
+- Lorem.

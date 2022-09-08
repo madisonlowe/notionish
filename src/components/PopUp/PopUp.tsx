@@ -1,4 +1,5 @@
 import icons from "../../assets/icons.js";
+import "./PopUp.css";
 
 type PopUpProps = {
   visiblePop: boolean;
