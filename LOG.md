@@ -32,8 +32,8 @@
 ### To Do
 
 - **Editable page:**
-  - Returns static header zone on all editable pages.
-    - Returns editable header zone on all editable pages.
+  - Returns static header zone on all editable pages. DONE.
+    - Returns editable header zone on all editable pages. DONE.
   - Returns one editable block as default.
   - When you press enter inside of an editable block, it duplicates the block (but empty) on the next line.
 - **Editable header zone: DONE.**
@@ -43,7 +43,7 @@
     - Editable title field. DONE (VERSION 1, SEE NOTES).
   - Static cover field. DONE.
     - Editable cover field. DONE.
-- **Editable block:**
+- **Editable block: WORKING ON.**
   - The Notion editable block features:
     - When you use the slash command, you can select the block type.
     - When you press enter, you duplicate the block type you are in on a new line.
@@ -155,7 +155,7 @@ Will be working towards achieving the above.
 
 - Got it done! First time I've really gotten how to make components fully reuseable as well. Took a lot of fiddling around with PopUp and Button, and they are absolutely not clean at all, but this was a concept I was struggling with since they first told us about it, so I'm pretty pleased, even if the code is hideous.
 
-TODO:
+To get to:
 
 - Make it so that the button for changing the header disappears when you mouse away from the header image itself, but still remains clickable.
 - Maybe try out some code so that you can dynamically update the favicon and tab title with the page icon and title?
@@ -166,3 +166,9 @@ Having reviewed plan, going to focus on:
 - Making the button disappear when you move away from the header image, but also remain clickable with the onmouseover and onmouseout.
   - Had a brainwave. Realised I could literally just do this with hover in CSS. Don't know why I was agonising over making state for it, unreal scenes.
   - Fixed it, though! Just need to actually tidy up some of the CSS so it's less ugly, but i think the functionality of the EditableHeader (the basic functionality) is done? Will check.
+
+TODO:
+
+- Check types and interfaces are correct and fitting.
+- Clean up logs and readme.
+- Work on editable block.
