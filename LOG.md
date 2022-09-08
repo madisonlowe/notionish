@@ -130,3 +130,12 @@ On the fly notes copied from component plan:
     - Menu contains a dictionary of icons that you can select and use.
     - On click, the selected icon is set as state for the main icon.
     - This state should also be used to set the metadata of the EditablePage, so will need to be raised later?
+
+Thu 8th Sept
+
+- Back on it!
+- Made a PopUp component which is rendered inside of EditableHeader. When you click the icon in the header, it renders the pop up component, and lets you select a new icon for the document from a provided list.
+- Took a while to get the onClick on the pop up for setting the icon state to work, but! Fixed it in the end!
+- Still need to:
+  - Use the state for the current icon to update the page metadata, so the favicon is the icon.
+  - Make the CSS for updating the icon apply properly.
