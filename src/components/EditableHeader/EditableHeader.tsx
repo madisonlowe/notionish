@@ -23,14 +23,14 @@ export default function EditableHeader() {
         src="https://www.nasa.gov/sites/default/files/styles/full_width/public/thumbnails/image/main_image_star-forming_region_carina_nircam_final-1280.jpg"
         className="headerImage"
       />
-      <span
-        className="headerIcon"
-        onClick={onClick}
-        visiblePop={visiblePop}
-        setIconImage={setIconImage}
-      >
+      <span className="headerIcon" onClick={onClick}>
         {iconImage}
       </span>
+      <PopUp
+        visiblePop={visiblePop}
+        setIconImage={setIconImage}
+        setVisiblePop={setVisiblePop}
+      />
       <input
         value={headerText}
         onChange={onChange}
