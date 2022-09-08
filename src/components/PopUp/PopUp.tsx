@@ -4,7 +4,7 @@ import "./PopUp.css";
 type PopUpProps = {
   visiblePop: boolean;
   setVisiblePop: (value: boolean) => void;
-  setIconImage: (value: string) => void;
+  setImage: (value: string) => void;
 };
 
 interface iconProps {
@@ -15,10 +15,10 @@ interface iconProps {
 export default function PopUp({
   visiblePop,
   setVisiblePop,
-  setIconImage,
+  setImage,
 }: PopUpProps): JSX.Element | null {
   function onClick(event: React.MouseEvent<HTMLButtonElement>) {
-    setIconImage((event.target as HTMLButtonElement).value);
+    setImage((event.target as HTMLButtonElement).value);
     setVisiblePop(false);
   }
 

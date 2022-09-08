@@ -1,34 +1,50 @@
 import { useState } from "react";
 import PopUp from "../PopUp/PopUp";
+import Button from "../Button/Button";
 import "./EditableHeader.css";
 
 export default function EditableHeader() {
   const [headerText, setHeaderText] = useState("Untitled");
   const [iconImage, setIconImage] = useState("💌");
-  const [visiblePop, setVisiblePop] = useState(false);
+  const [visibleIconPop, setVisibleIconPop] = useState(false);
+  const [visibleHeaderPop, setVisibleHeaderPop] = useState(false);
+  const [buttonVisible, setButtonVisible] = useState(false);
+  const [headerImage, setHeaderImage] = useState(
+    "https://www.northyorkmoors.org.uk/__data/assets/image/0032/117878/NYMR-steam-train-in-Newtondale_credit-Mike-Kipling-NYMNP.jpg"
+  );
 
   function onChange(e: React.ChangeEvent) {
     setHeaderText((e.target as HTMLTextAreaElement).value);
   }
 
   function onClick() {
-    setVisiblePop(!visiblePop);
+    setVisibleIconPop(!visibleIconPop);
+  }
+
+  function onHover() {
+    setButtonVisible(!buttonVisible);
   }
 
   return (
     <div className="EditableHeader">
       <img
         alt="Decorative header background."
-        src="https://www.nasa.gov/sites/default/files/styles/full_width/public/thumbnails/image/main_image_star-forming_region_carina_nircam_final-1280.jpg"
+        src={headerImage}
         className="headerImage"
+        onMouseOver={onHover}
+        onMouseOut={onHover}
+      />
+      <Button
+        instruction={"Click to change header."}
+        buttonVisible={buttonVisible}
       />
       <span className="headerIcon" onClick={onClick}>
         {iconImage}
       </span>
       <PopUp
-        visiblePop={visiblePop}
-        setIconImage={setIconImage}
-        setVisiblePop={setVisiblePop}
+        visiblePop={visibleIconPop}
+        setVisiblePop={setVisibleIconPop}
+        setImage={setIconImage}
       />
       <input
         value={headerText}
@@ -41,10 +57,10 @@ export default function EditableHeader() {
 }
 
 /* **Editable header zone:**
-- Editable icon field. WORKING ON THIS NOW.
+- Editable icon field.
     - Need to make sure the set icon on the page is also set as the page favicon.
-    - There's a lot more functionality, and you can set images, but I can worry about this later.
 - Editable cover field.
-    - Only editable through clicking on various buttons.
-Can manage this state through just this component? Maybe? I think? Nothing else on the wider page is able to affect it, and it's always visible on the page, so don't need state any higher?
+    - On Notion, when you hover over the header cover, a button to 'Change cover' comes up.
+    - If you click to change cover, it brings up another pop up.
+    - You select the cover you want from the 'Gallery', and the cover updates.
 */

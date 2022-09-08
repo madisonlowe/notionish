@@ -118,7 +118,7 @@ export default function EditableHeader() {
 
 On the fly notes copied from component plan:
 
-- Editable icon field. WORKING ON THIS NOW.
+- Editable icon field.
   - You click the icon.
   - A menu of other emoji icons comes up.
   - You select from the icons.
@@ -131,13 +131,24 @@ On the fly notes copied from component plan:
     - On click, the selected icon is set as state for the main icon.
     - This state should also be used to set the metadata of the EditablePage, so will need to be raised later?
 
-Thu 8th Sept
+**Thu 8th Sept**
 
 - Back on it!
 - Made a PopUp component which is rendered inside of EditableHeader. When you click the icon in the header, it renders the pop up component, and lets you select a new icon for the document from a provided list.
 - Took a while to get the onClick on the pop up for setting the icon state to work, but! Fixed it in the end!
 - Still need to:
   - Use the state for the current icon to update the page metadata, so the favicon is the icon.
+    - Just seems like this is gonna be crunchy, so setting aside for now.
   - Make the CSS for updating the icon apply properly.
     - CSS wasn't working because I'd forgotten to import it again, unreal.
-- Lorem.
+- Working on making the cover image on the page editable now.
+  - As with rest of interactive functionality in the EditableHeader, it's not a firm match to all the Notion functionality, but it's the basics. Can add complexity later, but you can't add complexity to what's not there.
+
+Copied plan:
+
+- Editable cover field.
+  - On Notion, when you hover over the header cover, a button to 'Change cover' comes up.
+  - If you click to change cover, it brings up another pop up.
+  - You select the cover you want from the pop up 'Gallery', and the cover updates.
+
+Will be working towards achieving the above.
