@@ -152,3 +152,11 @@ Copied plan:
   - You select the cover you want from the pop up 'Gallery', and the cover updates.
 
 Will be working towards achieving the above.
+
+- Got it done! First time I've really gotten how to make components fully reuseable as well. Took a lot of fiddling around with PopUp and Button, and they are absolutely not clean at all, but this was a concept I was struggling with since they first told us about it, so I'm pretty pleased, even if the code is hideous.
+
+After dinner TODO:
+
+- Make it so that the button for changing the header disappears when you mouse away from the header image itself, but still remains clickable.
+- Maybe try out some code so that you can dynamically update the favicon and tab title with the page icon and title?
+- Alternatively, just have a crack at cleaning up some different components. Review plan!
