@@ -1,0 +1,11 @@
+.PopUpContainer {
+  width: 300px;
+  height: 200px;
+  background-color: gainsboro;
+  position: absolute;
+  left: 35%;
+}
+
+.iconContainer {
+  border: solid 1px red;
+}
