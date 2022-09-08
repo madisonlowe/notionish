@@ -9,7 +9,6 @@ export default function EditableHeader() {
   const [iconImage, setIconImage] = useState("💌");
   const [visibleIconPop, setVisibleIconPop] = useState(false);
   const [visibleHeaderPop, setVisibleHeaderPop] = useState(false);
-  const [buttonVisible, setButtonVisible] = useState(false);
   const [headerImage, setHeaderImage] = useState(
     "https://www.northyorkmoors.org.uk/__data/assets/image/0032/117878/NYMR-steam-train-in-Newtondale_credit-Mike-Kipling-NYMNP.jpg"
   );
@@ -22,13 +21,9 @@ export default function EditableHeader() {
     setVisibleIconPop(!visibleIconPop);
   }
 
-  function onHover() {
-    setButtonVisible(true);
-  }
-
   return (
     <div className="EditableHeader">
-      <div onMouseOver={onHover} onMouseOut={onHover}>
+      <div>
         <img
           alt="Decorative header background."
           src={headerImage}
@@ -36,7 +31,6 @@ export default function EditableHeader() {
         />
         <Button
           instruction={"Click to change header."}
-          buttonVisible={buttonVisible}
           visiblePop={visibleHeaderPop}
           setVisiblePop={setVisibleHeaderPop}
           setImage={setHeaderImage}
@@ -61,11 +55,10 @@ export default function EditableHeader() {
   );
 }
 
-/* **Editable header zone:**
+/* 
+Version One finished!
+
+Version Two:
 - Editable icon field.
     - Need to make sure the set icon on the page is also set as the page favicon.
-- Editable cover field.
-    - On Notion, when you hover over the header cover, a button to 'Change cover' comes up.
-    - If you click to change cover, it brings up another pop up.
-    - You select the cover you want from the 'Gallery', and the cover updates.
 */

@@ -1,9 +1,9 @@
 import PopUp from "../PopUp/PopUp";
 import headers from "../../assets/headers.js";
+import "./Button.css";
 
 type ButtonProps = {
   instruction: string;
-  buttonVisible: boolean;
   visiblePop: boolean;
   setVisiblePop: (value: boolean) => void;
   setImage: (value: string) => void;
@@ -11,7 +11,6 @@ type ButtonProps = {
 
 export default function Button({
   instruction,
-  buttonVisible,
   visiblePop,
   setVisiblePop,
   setImage,
@@ -19,18 +18,17 @@ export default function Button({
   function onClick() {
     setVisiblePop(!visiblePop);
   }
-  if (buttonVisible === true) {
-    return (
-      <>
-        <button onClick={onClick}>{instruction}</button>
-        <PopUp
-          visiblePop={visiblePop}
-          setVisiblePop={setVisiblePop}
-          setImage={setImage}
-          choices={headers}
-        />
-      </>
-    );
-  }
-  return null;
+  return (
+    <>
+      <button onClick={onClick} className="buttonElement">
+        {instruction}
+      </button>
+      <PopUp
+        visiblePop={visiblePop}
+        setVisiblePop={setVisiblePop}
+        setImage={setImage}
+        choices={headers}
+      />
+    </>
+  );
 }
