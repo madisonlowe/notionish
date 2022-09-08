@@ -1,21 +1,23 @@
-import icons from "../../assets/icons.js";
 import "./PopUp.css";
 
 type PopUpProps = {
   visiblePop: boolean;
   setVisiblePop: (value: boolean) => void;
   setImage: (value: string) => void;
+  choices: any;
 };
 
 interface iconProps {
   name: string;
   image: string;
+  representation: string;
 }
 
 export default function PopUp({
   visiblePop,
   setVisiblePop,
   setImage,
+  choices,
 }: PopUpProps): JSX.Element | null {
   function onClick(event: React.MouseEvent<HTMLButtonElement>) {
     setImage((event.target as HTMLButtonElement).value);
@@ -25,14 +27,14 @@ export default function PopUp({
   if (visiblePop === true) {
     return (
       <div className="PopUpContainer">
-        <p>Click to select an icon.</p>
-        {icons.map((icon: iconProps) => (
+        <p>Click to select.</p>
+        {choices.map((choice: iconProps) => (
           <button
             onClick={onClick}
             className="iconContainer"
-            value={icon.image}
+            value={choice.image}
           >
-            {icon.image}
+            {choice.representation}
           </button>
         ))}
       </div>

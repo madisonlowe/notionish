@@ -2,6 +2,7 @@ import { useState } from "react";
 import PopUp from "../PopUp/PopUp";
 import Button from "../Button/Button";
 import "./EditableHeader.css";
+import icons from "../../assets/icons.js";
 
 export default function EditableHeader() {
   const [headerText, setHeaderText] = useState("Untitled");
@@ -22,22 +23,25 @@ export default function EditableHeader() {
   }
 
   function onHover() {
-    setButtonVisible(!buttonVisible);
+    setButtonVisible(true);
   }
 
   return (
     <div className="EditableHeader">
-      <img
-        alt="Decorative header background."
-        src={headerImage}
-        className="headerImage"
-        onMouseOver={onHover}
-        onMouseOut={onHover}
-      />
-      <Button
-        instruction={"Click to change header."}
-        buttonVisible={buttonVisible}
-      />
+      <div onMouseOver={onHover} onMouseOut={onHover}>
+        <img
+          alt="Decorative header background."
+          src={headerImage}
+          className="headerImage"
+        />
+        <Button
+          instruction={"Click to change header."}
+          buttonVisible={buttonVisible}
+          visiblePop={visibleHeaderPop}
+          setVisiblePop={setVisibleHeaderPop}
+          setImage={setHeaderImage}
+        />
+      </div>
       <span className="headerIcon" onClick={onClick}>
         {iconImage}
       </span>
@@ -45,6 +49,7 @@ export default function EditableHeader() {
         visiblePop={visibleIconPop}
         setVisiblePop={setVisibleIconPop}
         setImage={setIconImage}
+        choices={icons}
       />
       <input
         value={headerText}
