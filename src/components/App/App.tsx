@@ -9,13 +9,8 @@ function App() {
     setValue: any;
   }
 
-  interface pageComponents {
-    components: any;
-    setComponents: (value: any) => void;
-  }
-
   const [value, setValue] = useState<editableValue>();
-  const [components, setComponents] = useState<pageComponents>(["Tester"]);
+  const [components, setComponents] = useState(["Tester"]);
 
   function addComponent() {
     setComponents([...components, "Test Component"]);
@@ -25,6 +20,12 @@ function App() {
     <main className="App">
       <EditableHeader />
       <EditableBlock value={value} setValue={setValue} />
+      <div>
+        <button onClick={addComponent}>Call Component</button>
+        {components.map((item, i) => (
+          <EditableBlock value={value} setValue={setValue} />
+        ))}
+      </div>
     </main>
   );
 }
