@@ -1,4 +1,4 @@
-import { SetStateAction, useState } from "react";
+import { useState } from "react";
 import EditableHeader from "../EditableHeader/EditableHeader";
 import EditableBlock from "../EditableBlock/EditableBlock";
 import "./App.css";
@@ -12,20 +12,25 @@ function App() {
   const [value, setValue] = useState<editableValue>();
   const [components, setComponents] = useState(["Tester"]);
 
-  function addComponent() {
-    setComponents([...components, "Test Component"]);
-  }
-
   return (
     <main className="App">
       <EditableHeader />
-      <EditableBlock value={value} setValue={setValue} />
       <div>
-        <button onClick={addComponent}>Call Component</button>
-        {components.map((item, i) => (
-          <EditableBlock value={value} setValue={setValue} />
+        {components.map(() => (
+          <EditableBlock
+            value={value}
+            setValue={setValue}
+            components={components}
+            setComponents={setComponents}
+          />
         ))}
       </div>
+      <EditableBlock
+        value={value}
+        setValue={setValue}
+        components={components}
+        setComponents={setComponents}
+      />
     </main>
   );
 }
