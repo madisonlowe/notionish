@@ -167,3 +167,8 @@ TODO:
 - Check types and interfaces are correct and fitting.
 - Clean up logs and readme.
 - Work on editable block.
+
+Thu 15th Sept
+
+- Setting autoFocus on inputs and textareas can make you automatically focus on those elements, but it's a bit glitchy. Having the issue of state inner content copying to each new copy of a component, which is adding in extra spaces to each new component too, I think.
+- [This article was helpful.](https://blog.maisie.ink/react-ref-autofocus/)

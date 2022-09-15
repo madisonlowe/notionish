@@ -4,10 +4,22 @@ import "./EditableBlock.css";
 type EditableBlockProps = {
   value: any;
   setValue: (value: any) => void;
+  components: any;
+  setComponents: any;
 };
 
-export default function EditableBlock({ value, setValue }: EditableBlockProps) {
+export default function EditableBlock({
+  value,
+  setValue,
+  components,
+  setComponents,
+}: EditableBlockProps) {
   const [editingValue, setEditingValue] = useState(value);
+
+  function addComponent() {
+    setComponents([...components, "Test Component"]);
+  }
+
   function onChange(e: React.ChangeEvent<HTMLTextAreaElement>) {
     setEditingValue(e.target.value);
   }
@@ -26,6 +38,7 @@ export default function EditableBlock({ value, setValue }: EditableBlockProps) {
   function onKeyDown(e: React.KeyboardEvent<HTMLTextAreaElement>) {
     if (e.key === "Enter" || e.key === "Escape") {
       (e.target as HTMLTextAreaElement).blur();
+      addComponent();
     }
   }
 
@@ -38,6 +51,7 @@ export default function EditableBlock({ value, setValue }: EditableBlockProps) {
       onBlur={onBlur}
       rows={1}
       className="EditableBlock"
+      autoFocus
     ></textarea>
   );
 }

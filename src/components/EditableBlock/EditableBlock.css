@@ -1,6 +1,6 @@
 .EditableBlock {
   background-color: transparent;
-  border: 0px;
+  border: 1px solid red;
   outline: none;
   padding: 0.5rem;
   resize: none;
