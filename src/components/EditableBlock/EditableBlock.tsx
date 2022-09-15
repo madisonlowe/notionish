@@ -51,6 +51,7 @@ export default function EditableBlock({
       onBlur={onBlur}
       rows={1}
       className="EditableBlock"
+      autoFocus
     ></textarea>
   );
 }

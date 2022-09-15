@@ -25,12 +25,6 @@ function App() {
           />
         ))}
       </div>
-      <EditableBlock
-        value={value}
-        setValue={setValue}
-        components={components}
-        setComponents={setComponents}
-      />
     </main>
   );
 }
