@@ -41,5 +41,6 @@ Not organised into a chronological game plan, but see list below for things that
 
 A lot of these are things that came up while making Version One, but they weren't a priority to improve, over being able to get more useful improvements going in other areas. Will address them going forward, once base functionality and styling is finished!
 
+- Before others: go through all typing and interfaces and read up on best practices and nuts and bolts.
 - Cover field op-up should show previews of the images you can select.
 - The title field should be a textarea rather than an input, and should flow onto multiple lines rather than having the number of characters limited to prevent weird styling problems. Will probably need a good bit of styling doing to fix it, which is why I put this on the backburner while I was trying to get more functionality working.
