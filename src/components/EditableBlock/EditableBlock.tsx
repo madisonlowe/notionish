@@ -37,10 +37,12 @@ export default function EditableBlock({
   }
 
   function onKeyDown(e: React.KeyboardEvent<HTMLTextAreaElement>) {
-    if (e.key === "Enter" || e.key === "Escape") {
+    if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
       (e.target as HTMLTextAreaElement).blur();
       addComponent();
+    } else if (e.key === "Escape") {
+      (e.target as HTMLTextAreaElement).blur();
     }
   }
 
