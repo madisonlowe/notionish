@@ -41,7 +41,7 @@
 - **Editable block: WORKING ON.**
   - The Notion editable block features:
     - When you use the slash command, you can select the block type.
-    - When you press enter, you duplicate the block type you are in on a new line.
+    - When you press enter, you duplicate the block type you are in on a new line. DONE.
     - The moment you start typing anything other than a slash command, it defaults to a `<p>` input field.
 - Start with: an editable block that lets you select two kinds of sub-block, to make sure that code works.
 - Then: try and recreate the duplication that occurs on enter or clicking below the current block you're in.
@@ -168,12 +168,12 @@ TODO:
 - Clean up logs and readme.
 - Work on editable block.
 
-Thu 15th Sept
+**Thu 15th Sept.**
 
 - Setting autoFocus on inputs and textareas can make you automatically focus on those elements, but it's a bit glitchy. Having the issue of state inner content copying to each new copy of a component, which is adding in extra spaces to each new component too, I think.
 - [This article was helpful.](https://blog.maisie.ink/react-ref-autofocus/)
 
-Fri 16th Sept
+**Fri 16th Sept.**
 
 Notes from today's PR:
 
