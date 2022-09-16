@@ -198,8 +198,9 @@ To be honest, potentially chunky, so I'm going to put some styling in place firs
 
 Stuff to style:
 
-- Button
+- Button **DONE.**
 - EditableBlock
 - EditableHeader
 - PopUp
 - index.html **DONE.**
+- Layout of elements together

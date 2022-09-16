@@ -7,7 +7,7 @@ type ButtonProps = {
   visiblePop: boolean;
   setVisiblePop: (value: boolean) => void;
   setImage: (value: string) => void;
-  isHovering: any;
+  isHovering: boolean;
 };
 
 export default function Button({
@@ -26,7 +26,7 @@ export default function Button({
         <button
           onClick={onClick}
           className="buttonElement"
-          style={{ opacity: 1 }}
+          style={{ opacity: 1, transition: "ease-in-out 0.2s" }}
         >
           {instruction}
         </button>
