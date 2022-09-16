@@ -2,18 +2,24 @@ import { useState } from "react";
 import "./EditableBlock.css";
 
 type EditableBlockProps = {
-  value: any;
-  setValue: (value: any) => void;
+  value: string;
+  setValue: (value: string) => void;
   components: any;
   setComponents: any;
 };
 
+interface editableValue {
+  value: string;
+  setValue: string;
+}
+
 export default function EditableBlock({
-  value,
-  setValue,
+  // value,
+  // setValue,
   components,
   setComponents,
 }: EditableBlockProps) {
+  const [value, setValue] = useState<editableValue>();
   const [editingValue, setEditingValue] = useState(value);
 
   function addComponent() {

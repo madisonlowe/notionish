@@ -9,7 +9,7 @@ function App() {
     setValue: any;
   }
 
-  const [value, setValue] = useState<editableValue>();
+  // const [value, setValue] = useState<editableValue>();
   const [components, setComponents] = useState(["Tester"]);
 
   return (
@@ -18,8 +18,8 @@ function App() {
       <div>
         {components.map(() => (
           <EditableBlock
-            value={value}
-            setValue={setValue}
+            // value={value}
+            // setValue={setValue}
             components={components}
             setComponents={setComponents}
           />
