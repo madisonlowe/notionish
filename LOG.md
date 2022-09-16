@@ -202,4 +202,4 @@ Stuff to style:
 - EditableBlock
 - EditableHeader
 - PopUp
-- Check the metadata etc.
+- index.html **DONE.**
