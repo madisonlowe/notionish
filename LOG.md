@@ -172,3 +172,13 @@ Thu 15th Sept
 
 - Setting autoFocus on inputs and textareas can make you automatically focus on those elements, but it's a bit glitchy. Having the issue of state inner content copying to each new copy of a component, which is adding in extra spaces to each new component too, I think.
 - [This article was helpful.](https://blog.maisie.ink/react-ref-autofocus/)
+
+Fri 16th Sept
+
+Notes from today's PR:
+
+Was having an issue where, on calling a new EditableBlock component, the state inside both components would match. Also, on calling a new EditableBlock - which was a textarea - a new line would populate on each new component.
+
+Fixed the state issue by calling setValue() inside the addComponent function, to reset the new value of the new component.
+
+Fixed the textarea problem by calling preventDefault() on the press enter event. If enter is pressed without the shift key, the new component will populate. If enter is pressed with shift, you will move onto a new line within the same textarea you were already in. If you press escape, your focus will blur but no new component will call.
