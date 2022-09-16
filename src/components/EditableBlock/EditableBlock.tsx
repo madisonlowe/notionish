@@ -18,6 +18,7 @@ export default function EditableBlock({
 
   function addComponent() {
     setComponents([...components, "Test Component"]);
+    setValue("");
   }
 
   function onChange(e: React.ChangeEvent<HTMLTextAreaElement>) {
@@ -37,6 +38,7 @@ export default function EditableBlock({
 
   function onKeyDown(e: React.KeyboardEvent<HTMLTextAreaElement>) {
     if (e.key === "Enter" || e.key === "Escape") {
+      e.preventDefault();
       (e.target as HTMLTextAreaElement).blur();
       addComponent();
     }
