@@ -182,3 +182,25 @@ Was having an issue where, on calling a new EditableBlock component, the state i
 Fixed the state issue by calling setValue() inside the addComponent function, to reset the new value of the new component.
 
 Fixed the textarea problem by calling preventDefault() on the press enter event. If enter is pressed without the shift key, the new component will populate. If enter is pressed with shift, you will move onto a new line within the same textarea you were already in. If you press escape, your focus will blur but no new component will call.
+
+So! Left to finish for Version One:
+
+- **Editable block: WORKING ON.**
+  - When you use the slash command, you can select the block type.
+  - The moment you start typing anything other than a slash command, it defaults to a `<p>` input field.
+- Start with: an editable block that lets you select two kinds of sub-block, to make sure that code works.
+- Then: try and recreate the duplication that occurs on enter or clicking below the current block you're in.
+- **Models for the blocks:**
+  - `<p>` block.
+  - `<img>` block.
+
+To be honest, potentially chunky, so I'm going to put some styling in place first and then tackle it, so I have time to think about how I'm going to approach it.
+
+Stuff to style:
+
+- Button **DONE.**
+- EditableBlock
+- EditableHeader
+- PopUp
+- index.html **DONE.**
+- Layout of elements together

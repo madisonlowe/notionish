@@ -1,7 +1,12 @@
 .buttonElement {
-  opacity: 0;
+  color: grey;
+  font-weight: bold;
+  background-color: transparent;
+  border: transparent;
 }
 
 .buttonElement:hover {
-  opacity: 1;
+  transition: ease-in-out 0.2s;
+  background-color: gainsboro;
+  cursor: pointer;
 }

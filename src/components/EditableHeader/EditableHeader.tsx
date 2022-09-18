@@ -12,6 +12,7 @@ export default function EditableHeader() {
   const [headerImage, setHeaderImage] = useState(
     "https://www.northyorkmoors.org.uk/__data/assets/image/0032/117878/NYMR-steam-train-in-Newtondale_credit-Mike-Kipling-NYMNP.jpg"
   );
+  const [isHovering, setIsHovering] = useState(false);
 
   function onChange(e: React.ChangeEvent) {
     setHeaderText((e.target as HTMLTextAreaElement).value);
@@ -21,8 +22,20 @@ export default function EditableHeader() {
     setVisibleIconPop(!visibleIconPop);
   }
 
+  function onMouseOver() {
+    setIsHovering(true);
+  }
+
+  function onMouseOut() {
+    setIsHovering(false);
+  }
+
   return (
-    <div className="EditableHeader">
+    <div
+      className="EditableHeader"
+      onMouseOver={onMouseOver}
+      onMouseOut={onMouseOut}
+    >
       <div>
         <img
           alt="Decorative header background."
@@ -34,6 +47,7 @@ export default function EditableHeader() {
           visiblePop={visibleHeaderPop}
           setVisiblePop={setVisibleHeaderPop}
           setImage={setHeaderImage}
+          isHovering={isHovering}
         />
       </div>
       <span className="headerIcon" onClick={onClick}>
