@@ -1,6 +1,7 @@
 .EditableBlock {
   background-color: transparent;
-  border: 1px solid red;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  border: 1px solid transparent;
   outline: none;
   padding: 0.5rem;
   resize: none;
@@ -11,6 +12,7 @@
 }
 
 .EditableBlock:hover {
-  background-color: #d3d3d3;
+  border: 1px solid gainsboro;
+  transition: ease-in-out 0.2s;
   cursor: hover;
 }
