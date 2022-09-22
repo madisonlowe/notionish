@@ -2,13 +2,13 @@ import PopUp from "../PopUp/PopUp";
 import headers from "../../assets/headers.js";
 import "./Button.css";
 
-type ButtonProps = {
+interface ButtonProps {
   instruction: string;
   visiblePop: boolean;
   setVisiblePop: (value: boolean) => void;
   setImage: (value: string) => void;
   isHovering: boolean;
-};
+}
 
 export default function Button({
   instruction,

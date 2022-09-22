@@ -1,11 +1,11 @@
 import "./PopUp.css";
 
-type PopUpProps = {
+interface PopUpProps {
   visiblePop: boolean;
   setVisiblePop: (value: boolean) => void;
   setImage: (value: string) => void;
   choices: any;
-};
+}
 
 interface iconProps {
   name: string;

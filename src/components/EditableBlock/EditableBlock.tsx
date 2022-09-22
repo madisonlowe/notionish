@@ -1,12 +1,12 @@
 import { useState } from "react";
 import "./EditableBlock.css";
 
-type EditableBlockProps = {
-  value: any;
-  setValue: (value: any) => void;
-  components: any;
-  setComponents: any;
-};
+interface EditableBlockProps {
+  value: string;
+  setValue: (value: string) => void;
+  components: any; // fix
+  setComponents: any; // fix
+}
 
 export default function EditableBlock({
   value,
